@@ -14,5 +14,5 @@
 3. 程序运行方式：
     
 * --master local ： 本地运行
-* --master spark://<master host>:<master port> 集群运行
+* --master spark://\<master host\>:\<master port\> 集群运行
 * --master yarn ：在yarn上运行，程序自动检测ResourceManager's Address
