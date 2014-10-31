@@ -16,10 +16,15 @@ import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
 /**
+ * <pre>
  * spark-submit --class com.wankun.sparktest.JavaWordCount --master local target/sparktest-1.0.0.jar /tmp/test1 2
- * <p>
- * Description:
- * </p>
+ * 
+ * 运行有三种方式
+ *  --master local with --master spark://<master host>:<master port>.
+ * 
+ * If the cluster is running YARN, you can replace --master local with --master yarn.
+ * 
+ * </pre>
  * 
  * @author wankun
  * @date 2014年10月31日
