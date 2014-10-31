@@ -16,7 +16,7 @@ import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
 /**
- * spark-submit --class com.wankun.sparktest.JavaWordCount --master local target/sparkwordcount-0.0.1-SNAPSHOT.jar <input file> 2
+ * spark-submit --class com.wankun.sparktest.JavaWordCount --master local target/sparktest-1.0.0.jar /tmp/test1 2
  * <p>
  * Description:
  * </p>
@@ -82,6 +82,6 @@ public class JavaWordCount {
 					}
 				});
 
-		System.out.println(charCounts.collect());
+		System.out.println(filtered.collect());
 	}
 }
