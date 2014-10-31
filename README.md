@@ -12,7 +12,7 @@
 	spark-submit --class com.wankun.sparktest.JavaWordCount --master local target/sparkwordcount-0.0.1-SNAPSHOT.jar <input file> 
 
 3. 程序运行方式：
-	3.1. --master local ： 本地运行
-	3.2. --master spark://<master host>:<master port> 集群运行
-	3.3. --master yarn ：在yarn上运行，程序自动检测ResourceManager's Address 
-	
+    
+* --master local ： 本地运行
+* --master spark://<master host>:<master port> 集群运行
+* --master yarn ：在yarn上运行，程序自动检测ResourceManager's Address
