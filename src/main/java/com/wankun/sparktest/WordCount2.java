@@ -17,22 +17,19 @@ import scala.Tuple2;
 
 /**
  * <pre>
- * spark-submit --class com.wankun.sparktest.JavaWordCount --master local target/sparktest-1.0.0.jar /tmp/test1 2
+ * 在程序中设置spark参数
  * 
- * 运行有三种方式
- *  --master local with --master spark://<master host>:<master port>.
- * 
- * If the cluster is running YARN, you can replace --master local with --master yarn.
- * 
+ * park-submit --class com.wankun.sparktest.WordCount2 --master spark://quickstart.cloudera:7077 target/sparktest-1.0.0.jar /tmp/test1 2
  * </pre>
  * 
  * @author wankun
  * @date 2014年10月31日
  * @version 1.0
  */
-public class JavaWordCount {
+public class WordCount2 {
 	public static void main(String[] args) {
-		JavaSparkContext sc = new JavaSparkContext(new SparkConf().setAppName("Spark Count"));
+		JavaSparkContext sc = new JavaSparkContext(new SparkConf().setAppName("Spark Count")
+				.setMaster("spark://quickstart.cloudera:7077").set("executor-memory", "40m"));
 		final int threshold = Integer.parseInt(args[1]);
 
 		// split each document into words
