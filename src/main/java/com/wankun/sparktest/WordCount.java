@@ -19,7 +19,7 @@ import scala.Tuple2;
  * <pre>
  * 三种方式:local,spark cluster,yarn
  * spark-submit --class com.wankun.sparktest.WordCount --master local target/sparktest-1.0.0.jar /tmp/test1 2
- * spark-submit --class com.wankun.sparktest.WordCount --master yarn target/sparktest-1.0.0.jar --executor-memory 50m /tmp/test1 2
+ * spark-submit --class com.wankun.sparktest.WordCount --master yarn-cluster target/sparktest-1.0.0.jar /tmp/test1 2
  * spark-submit --class com.wankun.sparktest.WordCount --master spark://quickstart.cloudera:7077 --executor-memory 50m target/sparktest-1.0.0.jar /tmp/test1 2
  * 
  * </pre>
