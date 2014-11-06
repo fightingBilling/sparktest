@@ -1,4 +1,4 @@
-package com.wankun.sparktest.sparksql;
+package com.wankun.sparktest.sql;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -13,7 +13,19 @@ import org.apache.spark.sql.api.java.JavaSQLContext;
 import org.apache.spark.sql.api.java.JavaSchemaRDD;
 import org.apache.spark.sql.api.java.Row;
 
-public class JavaSparkSQL {
+/**
+ * <pre>
+ * 1. 上传people.txt,people.json文件到hdfs:///user/cloudera文件夹下
+ * 2. 运行程序：
+ * 		spark-submit --class com.wankun.sparktest.sql.SparkSQL --master local target/sparktest-1.0.0.jar
+ * 		spark-submit --class com.wankun.sparktest.sql.SparkSQL --master yarn-cluster target/sparktest-1.0.0.jar
+ * 		spark-submit --class com.wankun.sparktest.sql.SparkSQL --master spark://quickstart.cloudera:7077 --executor-memory 50m target/sparktest-1.0.0.jar
+ * </pre>
+* @author wankun
+* @date 2014年11月6日
+* @version 1.0
+ */
+public class SparkSQL {
   public static class Person implements Serializable {
     private String name;
     private int age;
@@ -36,7 +48,7 @@ public class JavaSparkSQL {
   }
 
   public static void main(String[] args) throws Exception {
-    SparkConf sparkConf = new SparkConf().setAppName("JavaSparkSQL");
+    SparkConf sparkConf = new SparkConf().setAppName("SparkSQL");
     JavaSparkContext ctx = new JavaSparkContext(sparkConf);
     JavaSQLContext sqlCtx = new JavaSQLContext(ctx);
 
