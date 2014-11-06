@@ -81,7 +81,10 @@
 		<junit.version>4.11</junit.version>
 	</properties>
 	<repositories>
-
+		<repository>
+			<id>cloudera</id>
+			<url>https://repository.cloudera.com/cloudera/cloudera-repos</url>
+		</repository>
 		<repository>
 			<id>scala-tools.org</id>
 			<name>Scala-tools Maven2 Repository</name>
@@ -93,18 +96,12 @@
 			</repository> <repository> <id>cloudera-repos</id> <name>Cloudera Repos</name> <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url> 
 			</repository> -->
 
-		<repository>
-			<id>cloudera</id>
-			<url>https://repository.cloudera.com/cloudera/cloudera-repos</url>
-		</repository>
+
 	</repositories>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-library</artifactId>
-			<version>2.10.4</version>
-		</dependency>
+		<!-- <dependency> <groupId>org.scala-lang</groupId> <artifactId>scala-library</artifactId> <version>2.10.4</version> 
+			</dependency> -->
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.10</artifactId>
