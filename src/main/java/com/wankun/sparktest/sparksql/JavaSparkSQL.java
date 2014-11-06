@@ -42,7 +42,7 @@ public class JavaSparkSQL {
 
     System.out.println("=== Data source: RDD ===");
     // Load a text file and convert each line to a Java Bean.
-    JavaRDD<Person> people = ctx.textFile("examples/src/main/resources/people.txt").map(
+    JavaRDD<Person> people = ctx.textFile("people.txt").map(
       new Function<String, Person>() {
         @Override
         public Person call(String line) {
@@ -101,7 +101,7 @@ public class JavaSparkSQL {
     System.out.println("=== Data source: JSON Dataset ===");
     // A JSON dataset is pointed by path.
     // The path can be either a single text file or a directory storing text files.
-    String path = "examples/src/main/resources/people.json";
+    String path = "people.json";
     // Create a JavaSchemaRDD from the file(s) pointed by path
     JavaSchemaRDD peopleFromJsonFile = sqlCtx.jsonFile(path);
 
