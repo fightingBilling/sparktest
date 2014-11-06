@@ -18,27 +18,28 @@ import java.util.regex.Pattern;
 
 /**
  * Counts words in UTF8 encoded, '\n' delimited text received from the network every second.
- * Usage: JavaNetworkWordCount <hostname> <port>
+ * Usage: StreamWordCount <hostname> <port>
  *   <hostname> and <port> describe the TCP server that Spark Streaming would connect to receive data.
  *
  * To run this on your local machine, you need to first run a Netcat server
  *    `$ nc -lk 9999`
  * and then run the example
- *    `$ bin/run-example org.apache.spark.examples.streaming.JavaNetworkWordCount localhost 9999`
+ *    `$ bin/run-example org.apache.spark.examples.streaming.StreamWordCount localhost 9999`
+ *    spark-submit --class com.wankun.sparktest.sql.SparkSQL --master yarn-cluster target/sparktest-1.0.0.jar
  */
-public final class JavaNetworkWordCount {
+public final class StreamWordCount {
   private static final Pattern SPACE = Pattern.compile(" ");
 
   public static void main(String[] args) {
     if (args.length < 2) {
-      System.err.println("Usage: JavaNetworkWordCount <hostname> <port>");
+      System.err.println("Usage: StreamWordCount <hostname> <port>");
       System.exit(1);
     }
 
 	// StreamingExamples.setStreamingLogLevels();
 
     // Create the context with a 1 second batch size
-    SparkConf sparkConf = new SparkConf().setAppName("JavaNetworkWordCount");
+    SparkConf sparkConf = new SparkConf().setAppName("StreamWordCount");
     JavaStreamingContext ssc = new JavaStreamingContext(sparkConf,  new Duration(1000));
 
     // Create a JavaReceiverInputDStream on target ip:port and count the
