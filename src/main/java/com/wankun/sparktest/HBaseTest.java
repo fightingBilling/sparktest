@@ -76,7 +76,10 @@ public class HBaseTest {
 			
 			List<Tuple2<ImmutableBytesWritable, Result>> result=myRDD.take(100);
 			for(Tuple2<ImmutableBytesWritable, Result> tup:result){
-				System.out.println("key:"+tup._1+"\t value:"+tup._2.toString());
+				Result res=tup._2;
+				System.out.println("key:"+tup._1+"\t value:"+res.rawCells());
+				System.out.println("rowkey:"+new String(res.getRow())+"  cf:"+new String(res.getValue(Bytes.toBytes("f"), Bytes.toBytes("age"))));
+				//for(keyvalue <- kv) println("rowkey:"+ new String(keyvalue.getRow)+ " cf:"+new String(keyvalue.getFamily()) + " column:" + new String(keyvalue.getQualifier) + " " + "value:"+new String(keyvalue.getValue()))
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
