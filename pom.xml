@@ -11,7 +11,7 @@
 	<url>http://maven.apache.org</url>
 
 
-
+<!-- 
 	<pluginRepositories>
 		<pluginRepository>
 			<id>scala-tools.org</id>
@@ -73,7 +73,7 @@
 			</plugin>
 		</plugins>
 	</build>
-
+ -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -116,6 +116,11 @@
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming_2.10</artifactId>
 			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-server</artifactId>
+			<version>0.98.1-cdh5.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

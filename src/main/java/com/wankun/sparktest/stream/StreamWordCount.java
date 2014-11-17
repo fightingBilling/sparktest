@@ -28,6 +28,7 @@ import java.util.regex.Pattern;
  *    spark-submit --class com.wankun.sparktest.stream.StreamWordCount --master yarn-cluster target/sparktest-1.0.0.jar localhost 9998
  *    
  *    spark-submit --class com.wankun.sparktest.stream.StreamWordCount --master local target/sparktest-1.0.0.jar localhost 9998
+ *    spark-submit --class com.wankun.sparktest.stream.StreamWordCount --master spark://node1:7077 target/sparktest-1.0.0.jar node2 9998
  */
 public final class StreamWordCount {
   private static final Pattern SPACE = Pattern.compile(" ");
@@ -69,7 +70,6 @@ public final class StreamWordCount {
         }
       });
 
-    System.out.println(wordCounts);
     wordCounts.print();
     ssc.start();
     ssc.awaitTermination();
