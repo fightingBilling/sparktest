@@ -18,4 +18,13 @@
 * --master yarn ：在yarn上运行，程序自动检测ResourceManager's Address
 
 ## 资料
-https://github.com/apache/spark apache spark mirror 
+https://github.com/apache/spark apache spark mirror
+
+## 20150423 
+	
+增加Java8 lambda的使用示例，更新工程的jdk为Java8
+
+* 代码的可读性也比原来好的多
+* 隐藏了很多spark封装的function API
+* 整体代码量只会有原来的一半
+ 
